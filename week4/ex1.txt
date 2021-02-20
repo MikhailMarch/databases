@@ -33,6 +33,9 @@ EXPLAIN analyze select * from customer where address like '2115%'
 "  Filter: (address ~~ '2115%'::text)"
 "  Rows Removed by Filter: 99990"
 "Planning Time: 0.139 ms"
+
+
+There is a difference in performace , selecting on indexed columns works faster
 "Execution Time: 17.218 ms"
 
 After creating b-tree index on name column time for querries was:
