@@ -1,0 +1,9 @@
+EXPLAIN analyse select * from customer where review = 'Level speech can daughter able attention. Fund number newspaper road. 
+Everybody land rather civil say. Include way environmental clearly ago family.'
+"Seq Scan on customer  (cost=0.00..4280.00 rows=1 width=211) (actual time=0.015..15.960 rows=1 loops=1)"
+"  Filter: (review = 'Level speech can daughter able attention. Fund number newspaper road. Everybody land rather civil say. Include way environmental clearly ago family.'::text)"
+"  Rows Removed by Filter: 99999"
+"Planning Time: 0.093 ms"
+"Execution Time: 15.974 ms"
+
+Yes, it does effect
