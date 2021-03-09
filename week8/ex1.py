@@ -3,7 +3,7 @@ import geopy
 from geopy.geocoders import Nominatim
 
 con = psycopg2.connect(database="dvdrental", user="postgres",
-                       password="F143e5g6h7", host="127.0.0.1", port="5432")
+                       password="1234", host="127.0.0.1", port="5432")
 
 print("Database opened successfully")
 cur = con.cursor()
