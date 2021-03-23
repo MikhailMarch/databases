@@ -26,7 +26,7 @@ update account set credit = credit + 30 where account.account_id = 4;
 update account set credit = credit - 100 where account.account_id = 2;
 update account set credit = credit + 100 where account.account_id = 3;
 update account set credit = credit - 30 where account.account_id = 2;
-update account set credit = credit + 30 where account.account_id = 2;
+update account set credit = credit + 30 where account.account_id = 4;
 
 select a.credit from account a;
 
