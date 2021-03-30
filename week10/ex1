@@ -1,0 +1,17 @@
+restaurantdb.restaurants.find()
+
+restaurantdb.restaurants.find({},{restaurant_id: 1, name:1, borough: 1, cuisine:1}).pretty()
+
+restaurantdb.restaurants.find({borough:'Bronx'}).limit(5).pretty()
+
+restaurantdb.restaurants.find( { $or: [
+  {cuisine: {$nin: ['American', 'Chinese']}}, 
+  {name: /^(Wil)/} 
+] },{restaurant_id: 1, name:1, borough: 1, cuisine:1} ).pretty()
+
+restaurantdb.restaurants.find(
+  {name: /mon/},
+  {restaurant_id: 1,name: 1,borough: 1,cuisine: 1,'address.coord': 1}
+).pretty()
+
+restaurantdb.restaurants.find({borough: {$in:['Staten Island', 'Bronx', 'Brooklyn', 'Queens']}},{name:1, borough: 1, cuisine:1}).pretty()
