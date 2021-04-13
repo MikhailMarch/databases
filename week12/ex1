@@ -1,14 +1,14 @@
-Create(q:Fighter{name:"Khabib Nurmagomedov",weight:"155"}):
+Create(q:Fighter{name:"Khabib Nurmagomedov",weight:"155"});
 Create(w:Fighter{name:"Rafael Dos Anjos", weight:"155"});
 Create(e:Fighter{name:"Neil Magny", weight:"170"});
 Create(o:Fighter{name:"Matt Hamill", weight:"185"});
 Create(s:Fighter{name:"Brock Lesnar", weight:"230"});
 Create(d:Fighter{name:"Kelvin Gastelum", weight:"185"});
 Create(p:Fighter{name:"Brandon Vera", weight:"205"});
-Create(a:Fighter{name:"Frank Mir", weight:"230"}):
-Create(r:Fighter{name:"Jon Jones", weight:"205"}):
+Create(a:Fighter{name:"Frank Mir", weight:"230"});
+Create(r:Fighter{name:"Jon Jones", weight:"205"});
 Create(t:Fighter{name:"Daniel Cormier", weight:"205"});
-Create(y:Fighter{name:"Michael Bisping", weight:"185"}):
+Create(y:Fighter{name:"Michael Bisping", weight:"185"});
 Create(a)-[:beats]->(s);
 Create(e)-[:beats]->(d);
 Create(d)-[:beats]->(y);
