@@ -1,0 +1,49 @@
+Create(q:Fighter{name:"Khabib Nurmagomedov",weight:"155"}):
+Create(w:Fighter{name:"Rafael Dos Anjos", weight:"155"});
+Create(e:Fighter{name:"Neil Magny", weight:"170"});
+Create(o:Fighter{name:"Matt Hamill", weight:"185"});
+Create(s:Fighter{name:"Brock Lesnar", weight:"230"});
+Create(d:Fighter{name:"Kelvin Gastelum", weight:"185"});
+Create(p:Fighter{name:"Brandon Vera", weight:"205"});
+Create(a:Fighter{name:"Frank Mir", weight:"230"}):
+Create(r:Fighter{name:"Jon Jones", weight:"205"}):
+Create(t:Fighter{name:"Daniel Cormier", weight:"205"});
+Create(y:Fighter{name:"Michael Bisping", weight:"185"}):
+Create(a)-[:beats]->(s);
+Create(e)-[:beats]->(d);
+Create(d)-[:beats]->(y);
+Create(p)-[:beats]->(a);
+Create(y)-[:beats]->(o);
+Create(y)-[:beats]->(d);
+Create(q)-[:beats]->(w);
+Create(w)-[:beats]->(e);
+Create(r)-[:beats]->(t);
+Create(y)-[:beats]->(o);
+Create(r)-[:beats]->(p);
+Create(o)-[:beats]->(r);
+
+Request 1:
+match (a:Fighter)-[:beats]->(b:Fighter)
+with a,b, count(b) as cont
+where a.weight in ["155", "170", "185"] and cont > 0 return distinct a;
+
+Request 2:
+match (a:Fighter)-[:beats]->(b:Fighter)-[:beats]->(a:Fighter)
+with a,b, count(a) as cont
+where cont = 1 return distinct a;
+
+Request 3:
+match (a:Fighter)-[:beats * 2..]->(b:Fighter)
+where a.name = "Khabib Nurmagomedov" return distinct b;
+
+Request 4:
+match (a:Fighter)
+where NOT ()-[:beats]->(a) return a;
+
+Request 5:
+match (a:Fighter)
+where NOT (a)-[:beats]->() return a;
+
+Request 6:
+match (a:Fighter) SET a.record = 566;
+
