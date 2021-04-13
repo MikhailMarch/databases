@@ -45,5 +45,5 @@ match (a:Fighter)
 where NOT (a)-[:beats]->() return a;
 
 Request 6:
-match (a:Fighter) SET a.record = 566;
+match (a:Fighter) SET a.record = 137;
 
